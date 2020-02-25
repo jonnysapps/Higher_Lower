@@ -7,6 +7,8 @@ def main():
 	print(roll1)
 	while True:
 		roll2 = (random.randint(1, 10))
+		while roll2 == roll1:
+			roll2 = (random.randint(1, 10))
 		time.sleep(1)
 		choice1 = input("Higher or Lower?: ")
 		time.sleep(1)
@@ -19,10 +21,7 @@ def main():
 			print("correct")
 			roll1 = roll2
 			score = score + 1
-		elif(roll1 == roll2):
-			print("Call that one a tie?")
-			continue
-		else:	
+		else:
 			print("Incorrect")
 			time.sleep(0.5)
 			print("You scored: " + str(score))
